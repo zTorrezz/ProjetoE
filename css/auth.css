@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+
+/* ============================================= */
+/* VARIÁVEIS DE CORES PRINCIPAIS                 */
+/* Define as cores padrão usadas em todo o site  */
+/* ============================================= */
+:root {
+    --primary: #f35c11;       /* Cor primária (laranja) */
+    --primary-dark: #d03801;  /* Versão mais escura da cor primária */
+    --white: #ffffff;         /* Branco puro */
+    --light: #f9f9f9;         /* Cinza muito claro para fundos */
+    --dark: #333333;          /* Preto/cinza escuro para textos */
+    --gray: #6c757d;          /* Cinza padrão */
+    --gray-light: #e0e0e0;    /* Cinza claro para bordas */
+}
+/* auth.css */
+
+/* Definindo a fonte Sansation */
+@font-face {
+    font-family: 'Sansation';
+    src: url('caminho/para/o/arquivo/Sansation-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'Sansation', sans-serif;
+    background-color: #f5f5f5; /* exemplo de fundo */
+    color: #333;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Sansation', sans-serif;
+  }
+  
+  input, button {
+    font-family: 'Sansation', sans-serif;
+  }
+  
+
+
+
+
+/* ============================================= */
+/* LAYOUT DA PÁGINA DE LOGIN                     */
+/* Estilos para o container principal da página  */
+/* ============================================= */
+.login-page {
+    min-height: 100vh;        /* Garante que ocupa toda a altura da tela */
+    display: flex;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;      /* Centraliza verticalmente */
+    background: url('../assets/images/bg-login.jpg') no-repeat center center;
+    background-size: cover;   /* Faz a imagem cobrir todo o espaço */
+    position: relative;       /* Permite posicionamento absoluto dos filhos */
+    padding: 1rem;            /* Espaçamento interno */
+    overflow: hidden;         /* Esconde qualquer conteúdo que ultrapasse */
+}
+
+/* Overlay escuro sobre a imagem de fundo para melhor contraste */
+.login-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); /* Preto com 70% de opacidade */
+}
+
+/* ============================================= */
+/* CONTAINER DO FORMULÁRIO                       */
+/* Estilos para a caixa que contém o formulário  */
+/* ============================================= */
+.login-container {
+    position: relative;       /* Permite sobrepor o overlay */
+    z-index: 1;              /* Garante que fique acima do overlay */
+    width: 100%;
+    max-width: 400px;        /* Largura máxima do container */
+    background: var(--white); /* Fundo branco */
+    border-radius: 12px;     /* Bordas arredondadas */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    overflow: hidden;        /* Esconde bordas arredondadas dos filhos */
+    animation: fadeInUp 0.6s ease; /* Animação de entrada */
+}
+
+/* ============================================= */
+/* CABEÇALHO DO FORMULÁRIO                       */
+/* Estilos para a parte superior com logo/título */
+/* ============================================= */
+.login-header {
+    padding: 2rem 2rem 1rem; /* Espaçamento interno */
+    text-align: center;      /* Centraliza conteúdo */
+    background: linear-gradient(to right, var(--primary), var(--primary-dark)); /* Gradiente laranja */
+    border-bottom: 2px solid var(--primary-dark); /* Borda inferior */
+}
+
+/* Estilos para o logo */
+.login-logo {
+    height: 60px;           /* Altura fixa */
+    margin-bottom: 1rem;    /* Espaço abaixo do logo */
+    filter: brightness(0) invert(1); /* Transforma logo em branco */
+}
+
+/* Título principal */
+.login-title {
+    color: var(--white);    /* Texto branco */
+    font-size: 1.75rem;     /* Tamanho grande */
+    font-weight: 700;       /* Negrito */
+    margin-bottom: 0.25rem; /* Espaço abaixo */
+}
+
+/* Subtítulo */
+.login-subtitle {
+    color: rgba(255, 255, 255, 0.8); /* Branco com 80% de opacidade */
+    font-size: 1rem;        /* Tamanho normal */
+}
+
+/* ============================================= */
+/* FORMULÁRIO                                    */
+/* Estilos para os campos e botões do formulário */
+/* ============================================= */
+.login-form {
+    padding: 2rem;          /* Espaçamento interno */
+}
+
+/* Grupo de campos do formulário */
+.form-group {
+    margin-bottom: 1.25rem; /* Espaço entre grupos */
+}
+
+/* Rótulos dos campos */
+.form-group label {
+    display: block;         /* Faz ocupar toda a linha */
+    margin-bottom: 0.5rem;  /* Espaço abaixo do rótulo */
+    color: var(--dark);     /* Cor escura para texto */
+    font-weight: 500;       /* Semi-negrito */
+    font-size: 0.875rem;    /* Tamanho um pouco menor */
+}
+
+/* Campos de entrada */
+.form-group input {
+    width: 90%;            /* Ocupa toda a largura */
+    padding: 0.75rem 1rem;  /* Espaçamento interno */
+    border: 1px solid var(--gray-light); /* Borda cinza clara */
+    border-radius: 8px;     /* Bordas arredondadas */
+    font-size: 1rem;        /* Tamanho normal */
+    transition: all 0.2s;   /* Transição suave para hover/focus */
+    background: var(--light); /* Fundo cinza muito claro */
+}
+
+/* Efeito quando o campo está em foco */
+.form-group input:focus {
+    outline: none;          /* Remove outline padrão */
+    border-color: var(--primary); /* Borda laranja */
+    box-shadow: 0 0 0 3px rgba(255, 90, 31, 0.2); /* Sombra laranja suave */
+}
+
+/* ============================================= */
+/* BOTÃO DE LOGIN                                */
+/* Estilos para o botão principal de ação        */
+/* ============================================= */
+.login-btn {
+    width: 100%;            /* Ocupa toda a largura */
+    padding: 0.875rem;      /* Espaçamento interno */
+    background: linear-gradient(to right, var(--primary), var(--primary-dark)); /* Gradiente laranja */
+    color: var(--white);    /* Texto branco */
+    border: none;           /* Sem borda */
+    border-radius: 8px;     /* Bordas arredondadas */
+    font-size: 1rem;        /* Tamanho normal */
+    font-weight: 600;       /* Negrito */
+    cursor: pointer;        /* Cursor de ponteiro */
+    transition: all 0.3s ease; /* Transição suave */
+    margin-top: 1rem;       /* Espaço acima do botão */
+    position: relative;     /* Para efeitos internos */
+    overflow: hidden;       /* Esconde conteúdo que ultrapasse */
+}
+
+/* Efeito hover do botão */
+.login-btn:hover {
+    transform: translateY(-2px); /* Levanta levemente */
+    box-shadow: 0 4px 12px rgba(255, 90, 31, 0.3); /* Sombra laranja */
+}
+
+/* ============================================= */
+/* RODAPÉ DO FORMULÁRIO                         */
+/* Links e informações adicionais                */
+/* ============================================= */
+.login-footer {
+    margin-top: 1.5rem;     /* Espaço acima do rodapé */
+    text-align: center;     /* Centraliza conteúdo */
+    color: var(--gray);     /* Texto cinza */
+    font-size: 0.875rem;    /* Tamanho menor */
+}
+
+/* Link "esqueci a senha" */
+.forgot-password {
+    color: var(--primary);  /* Cor laranja */
+    text-decoration: none;  /* Remove sublinhado */
+    font-weight: 500;       /* Semi-negrito */
+}
+
+.forgot-password:hover {
+    text-decoration: underline; /* Sublinhado no hover */
+}
+
+/* ============================================= */
+/* ANIMAÇÕES E EFEITOS                          */
+/* Estilos para spinners e animações             */
+/* ============================================= */
+
+/* Spinner de carregamento */
+.spinner {
+    animation: rotate 1.5s linear infinite; /* Rotação contínua */
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.spinner circle {
+    stroke: currentColor;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite; /* Efeito de traço */
+}
+
+/* Animação de rotação */
+@keyframes rotate {
+    100% { transform: rotate(360deg); }
+}
+
+/* Animação dos traços do spinner */
+@keyframes dash {
+    0% { stroke-dasharray: 1, 150; stroke-dashoffset: 0; }
+    50% { stroke-dasharray: 90, 150; stroke-dashoffset: -35; }
+    100% { stroke-dasharray: 90, 150; stroke-dashoffset: -124; }
+}
+
+/* Animação de entrada do formulário */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================= */
+/* RESPONSIVIDADE                               */
+/* Ajustes para telas pequenas                   */
+/* ============================================= */
+@media (max-width: 576px) {
+    .login-container {
+        max-width: 100%;    /* Ocupa toda a largura */
+        border-radius: 0;   /* Remove bordas arredondadas */
+    }
+}

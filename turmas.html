@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turmas - Gestão Escolar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets/images/logo.svg" alt="Logo Gestão Escolar">
+      <span>Gestão Escolar</span>
+    </div>
+    
+    <button class="menu-btn" id="menuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <div class="user-info">
+      <span>Bem-vindo, Admin</span>
+      <a href="index.html" class="logout-btn">Sair</a>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <nav class="nav-menu">
+        <ul>
+          <li class="nav-item">
+            <a href="home.html" class="nav-link">
+              <i class="icon-home"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="alunos.html" class="nav-link">
+              <i class="icon-student"></i> Alunos
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="professores.html" class="nav-link">
+              <i class="icon-teacher"></i> Professores
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="turmas.html" class="nav-link active">
+              <i class="icon-class"></i> Turmas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="disciplinas.html" class="nav-link">
+              <i class="icon-subject"></i> Disciplinas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="notas.html" class="nav-link">
+              <i class="icon-grade"></i> Notas
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="content">
+      <div class="breadcrumb">Home / Turmas</div>
+      <h1><i class="icon-class"></i> Gestão de Turmas</h1>
+      
+      <div class="actions">
+        <button id="addTurma" class="btn-primary">
+          <i class="icon-add"></i> Adicionar Turma
+        </button>
+        <div class="search-box">
+          <input type="text" id="searchTurma" placeholder="Buscar turma...">
+          <button class="search-btn">
+            <i class="icon-search"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="table-responsive">
+        <table id="turmasTable">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Nome</th>
+              <th>Série</th>
+              <th>Turno</th>
+              <th>Quant. Alunos</th>
+              <th>Professor</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TURMA001</td>
+              <td>Turma A</td>
+              <td>1º Ano</td>
+              <td>Manhã</td>
+              <td>25</td>
+              <td>Carlos Mendes</td>
+              <td class="actions-cell">
+                <button class="btn-edit"><i class="icon-edit"></i> Editar</button>
+                <button class="btn-delete"><i class="icon-delete"></i> Remover</button>
+              </td>
+            </tr>
+            <tr>
+              <td>TURMA002</td>
+              <td>Turma B</td>
+              <td>2º Ano</td>
+              <td>Tarde</td>
+              <td>30</td>
+              <td>Ana Paula Silva</td>
+              <td class="actions-cell">
+                <button class="btn-edit"><i class="icon-edit"></i> Editar</button>
+                <button class="btn-delete"><i class="icon-delete"></i> Remover</button>
+              </td>
+            </tr>
+            <tr>
+              <td>TURMA003</td>
+              <td>Turma C</td>
+              <td>3º Ano</td>
+              <td>Noite</td>
+              <td>20</td>
+              <td>Roberto Almeida</td>
+              <td class="actions-cell">
+                <button class="btn-edit"><i class="icon-edit"></i> Editar</button>
+                <button class="btn-delete"><i class="icon-delete"></i> Remover</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Modal para adicionar/editar turma -->
+      <div id="turmaModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2 id="modalTitle">Adicionar Nova Turma</h2>
+          <form id="turmaForm">
+            <div class="form-group">
+              <label for="nomeTurma">Nome da Turma*</label>
+              <input type="text" id="nomeTurma" required>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="serieTurma">Série*</label>
+                <select id="serieTurma" required>
+                  <option value="">Selecione a série</option>
+                  <option value="1">1º Ano</option>
+                  <option value="2">2º Ano</option>
+                  <option value="3">3º Ano</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="turnoTurma">Turno*</label>
+                <select id="turnoTurma" required>
+                  <option value="">Selecione o turno</option>
+                  <option value="manha">Manhã</option>
+                  <option value="tarde">Tarde</option>
+                  <option value="noite">Noite</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="professorTurma">Professor Responsável*</label>
+              <select id="professorTurma" required>
+                <option value="">Selecione o professor</option>
+                <option value="1">Carlos Mendes</option>
+                <option value="2">Ana Paula Silva</option>
+                <option value="3">Roberto Almeida</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="disciplinasTurma">Disciplinas*</label>
+              <select id="disciplinasTurma" multiple>
+                <option value="1">Matemática</option>
+                <option value="2">Português</option>
+                <option value="3">História</option>
+                <option value="4">Geografia</option>
+                <option value="5">Ciências</option>
+                <option value="6">Inglês</option>
+              </select>
+            </div>
+            
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">Salvar Turma</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script src="js/turmas.js"></script>
+</body>
+</html>

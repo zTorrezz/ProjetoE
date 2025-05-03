@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Meta tags para codificação de caracteres e viewport responsivo -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título da página exibido na aba do navegador -->
+    <title>Login | Gestão Escolar</title>
+    
+    <!-- Recursos externos -->
+    <link rel="stylesheet" href="css/auth.css"> <!-- Folha de estilo principal -->
+    <link rel="icon" href="assets/images/favicon.ico"> <!-- Ícone favorito -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> <!-- Fontes do Google -->
+</head>
+
+<!-- Corpo com classe específica para estilização da página de login -->
+<body class="login-page">
+    <!-- Container principal do login -->
+    <div class="login-container">
+        <!-- Cabeçalho com logo e títulos -->
+        <div class="login-header">
+            <img src="assets/images/logo.svg" alt="Logo Gestão Escolar" class="login-logo">
+            <h1 class="login-title">Gestão Escolar</h1>
+            <p class="login-subtitle">Sistema completo de gestão educacional</p>
+        </div>
+        
+        <!-- Formulário de login -->
+        <form class="login-form" id="loginForm">
+            <!-- Campo de entrada para usuário -->
+            <div class="form-group">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" placeholder="ex: admin" required>
+            </div>
+            
+            <!-- Campo de entrada para senha -->
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+            
+            <!-- Botão de submissão com indicador de carregamento -->
+            <button type="submit" class="login-btn">
+                <span class="btn-text">Entrar</span> <!-- Texto padrão do botão -->
+                <span class="btn-loading" style="display:none;"> <!-- Spinner de carregamento (oculto por padrão) -->
+                    <svg class="spinner" viewBox="0 0 50 50">
+                        <circle cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                    </svg>
+                </span>
+            </button>
+            
+            <!-- Rodapé com ações secundárias -->
+            <div class="login-footer">
+                <a href="#" class="forgot-password">Esqueceu a senha?</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Script JavaScript para funcionalidades de autenticação -->
+    <script src="js/auth.js"></script>
+</body>
+</html>

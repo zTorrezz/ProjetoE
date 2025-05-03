@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas | Gestão Escolar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <button class="menu-btn" id="menuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="main-container">
+        <aside class="sidebar" id="sidebar">
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-item">
+                        <a href="home.html" class="nav-link">
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="alunos.html" class="nav-link">
+                            <span>Alunos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="professores.html" class="nav-link">
+                            <span>Professores</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="turmas.html" class="nav-link">
+                            <span>Turmas</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="disciplinas.html" class="nav-link">
+                            <span>Disciplinas</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="notas.html" class="nav-link active">
+                            <span>Notas</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <h1>Gestão de Notas</h1>
+            
+            <div class="filters">
+                <div class="form-group">
+                    <label for="selectTurma">Turma</label>
+                    <select id="selectTurma">
+                        <option value="">Todas as turmas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="selectDisciplina">Disciplina</label>
+                    <select id="selectDisciplina">
+                        <option value="">Todas as disciplinas</option>
+                    </select>
+                </div>
+                <button id="filterNotas" class="btn btn-primary">Filtrar</button>
+            </div>
+            
+            <div class="table-responsive">
+                <table id="notasTable">
+                    <thead>
+                        <tr>
+                            <th>Aluno</th>
+                            <th>Disciplina</th>
+                            <th>Nota 1</th>
+                            <th>Nota 2</th>
+                            <th>Nota 3</th>
+                            <th>Média</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dados serão inseridos via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Modal para lançamento de notas -->
+            <div id="notaModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Lançar Notas</h2>
+                    <form id="notaForm">
+                        <div class="form-group">
+                            <label for="alunoNota">Aluno</label>
+                            <select id="alunoNota" required>
+                                <option value="">Selecione um aluno</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="disciplinaNota">Disciplina</label>
+                            <select id="disciplinaNota" required>
+                                <option value="">Selecione uma disciplina</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="nota1">Nota 1</label>
+                            <input type="number" step="0.1" min="0" max="10" id="nota1">
+                        </div>
+                        <div class="form-group">
+                            <label for="nota2">Nota 2</label>
+                            <input type="number" step="0.1" min="0" max="10" id="nota2">
+                        </div>
+                        <div class="form-group">
+                            <label for="nota3">Nota 3</label>
+                            <input type="number" step="0.1" min="0" max="10" id="nota3">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/notas.js"></script>
+</body>
+</html>

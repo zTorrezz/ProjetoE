@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disciplinas | Gestão Escolar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets/images/logo.svg" alt="Logo Gestão Escolar">
+      <span>Gestão Escolar</span>
+    </div>
+    
+    <button class="menu-btn" id="menuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <div class="user-info">
+      <span>Bem-vindo, Admin</span>
+      <a href="index.html" class="logout-btn">Sair</a>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <aside class="sidebar" id="sidebar">
+      <nav class="nav-menu">
+        <ul>
+          <li class="nav-item">
+            <a href="home.html" class="nav-link">
+              <i class="icon-home"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="alunos.html" class="nav-link">
+              <i class="icon-student"></i> Alunos
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="professores.html" class="nav-link">
+              <i class="icon-teacher"></i> Professores
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="turmas.html" class="nav-link">
+              <i class="icon-class"></i> Turmas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="disciplinas.html" class="nav-link active">
+              <i class="icon-subject"></i> Disciplinas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="notas.html" class="nav-link">
+              <i class="icon-grade"></i> Notas
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <div class="breadcrumb">Home / Disciplinas</div>
+      <h1><i class="icon-subject"></i> Gestão de Disciplinas</h1>
+      
+      <div class="actions">
+        <button id="addDisciplina" class="btn-primary">
+          <i class="icon-add"></i> Adicionar Disciplina
+        </button>
+        <div class="search-box">
+          <input type="text" id="searchDisciplina" placeholder="Buscar disciplina...">
+          <button class="search-btn">
+            <i class="icon-search"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="table-responsive">
+        <table id="disciplinasTable">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Carga Horária</th>
+              <th>Professor</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Dados serão inseridos via JavaScript -->
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Modal para cadastro de disciplinas -->
+      <div id="disciplinaModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2 id="modalDisciplinaTitle">Cadastrar Disciplina</h2>
+          <form id="disciplinaForm">
+            <div class="form-group">
+              <label for="nomeDisciplina">Nome da Disciplina*</label>
+              <input type="text" id="nomeDisciplina" required>
+            </div>
+            <div class="form-group">
+              <label for="cargaHoraria">Carga Horária (horas)*</label>
+              <input type="number" id="cargaHoraria" required>
+            </div>
+            <div class="form-group">
+              <label for="professorDisciplina">Professor</label>
+              <select id="professorDisciplina">
+                <option value="">Selecione um professor</option>
+              </select>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script src="js/disciplinas.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Configurações básicas da página -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Gestão Escolar</title>
+  
+  <!-- Recursos externos -->
+  <link rel="stylesheet" href="css/style.css"> <!-- Folha de estilo principal -->
+  <link rel="icon" href="assets/images/favicon.ico"> <!-- Ícone da aba -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> <!-- Fontes Google -->
+</head>
+<body>
+  <!-- Cabeçalho da aplicação -->
+  <header>
+    <div class="logo">
+      <img src="assets/images/logo.svg" alt="Logo Gestão Escolar">
+      <span>Gestão Escolar</span>
+    </div>
+    
+    <!-- Botão para menu mobile (aparece em telas pequenas) -->
+    <button class="menu-btn" id="menuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <!-- Área de informações do usuário logado -->
+    <div class="user-info">
+      <span>Bem-vindo, Admin</span>
+      <a href="index.html" class="logout-btn">Sair</a> <!-- Link para logout -->
+    </div>
+  </header>
+
+  <!-- Container principal (sidebar + conteúdo) -->
+  <div class="main-container">
+    <!-- Sidebar - Menu de navegação -->
+    <aside class="sidebar" id="sidebar">
+      <nav class="nav-menu">
+        <ul>
+          <!-- Itens do menu de navegação -->
+          <li class="nav-item">
+            <a href="home.html" class="nav-link active">
+              <i class="icon-home"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="alunos.html" class="nav-link">
+              <i class="icon-student"></i> Alunos
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="professores.html" class="nav-link">
+              <i class="icon-teacher"></i> Professores
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="turmas.html" class="nav-link">
+              <i class="icon-class"></i> Turmas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="disciplinas.html" class="nav-link">
+              <i class="icon-subject"></i> Disciplinas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="notas.html" class="nav-link">
+              <i class="icon-grade"></i> Notas
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Área de conteúdo principal -->
+    <main class="content">
+      <!-- Navegação por breadcrumb -->
+      <div class="breadcrumb">Home / Dashboard</div>
+      <h1>Bem-vindo ao Sistema de Gestão Escolar</h1>
+      
+      <!-- Seção de informações da escola -->
+      <div class="school-info">
+        <div class="school-header">
+          <img src="assets/images/school-building.jpg" alt="Foto da Escola" class="school-image">
+          <div class="school-details">
+            <h2>Escola Modelo de Ensino</h2>
+            <p>Rua da Educação, 123 - Centro</p>
+            <p>Telefone: (11) 1234-5678</p>
+            <p>Email: contato@escolamodelo.com.br</p>
+          </div>
+        </div>
+        
+        <div class="school-description">
+          <p>Fundada em 1990, a Escola Modelo de Ensino tem como missão proporcionar educação de qualidade com foco no desenvolvimento integral dos alunos.</p>
+        </div>
+      </div>
+      
+      <!-- Seção de estatísticas -->
+      <h2>Estatísticas Gerais</h2>
+      <div class="stats-grid">
+        <!-- Cartão de estatística - Alunos -->
+        <div class="stat-card">
+          <div class="stat-title">Alunos Matriculados</div>
+          <div class="stat-value">248</div>
+          <div class="stat-change positive">+12% em relação ao ano passado</div>
+        </div>
+        
+        <!-- Cartão de estatística - Professores -->
+        <div class="stat-card">
+          <div class="stat-title">Professores</div>
+          <div class="stat-value">32</div>
+          <div class="stat-change">Estável</div>
+        </div>
+        
+        <!-- Cartão de estatística - Turmas -->
+        <div class="stat-card">
+          <div class="stat-title">Turmas Ativas</div>
+          <div class="stat-value">12</div>
+          <div class="stat-change positive">+2 novas turmas</div>
+        </div>
+        
+        <!-- Cartão de estatística - Disciplinas -->
+        <div class="stat-card">
+          <div class="stat-title">Disciplinas Oferecidas</div>
+          <div class="stat-value">24</div>
+          <div class="stat-change positive">+3 novas disciplinas</div>
+        </div>
+      </div>
+      
+      <!-- Seção da galeria de fotos -->
+      <h2>Galeria da Escola</h2>
+      <div class="gallery">
+        <!-- Itens da galeria -->
+        <div class="gallery-item">
+          <img src="assets/images/gallery1.jpg" alt="Atividades escolares">
+          <p>Atividades em sala de aula</p>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery2.jpg" alt="Evento escolar">
+          <p>Feira de ciências</p>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery3.jpg" alt="Infraestrutura">
+          <p>Nossa biblioteca</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Script JavaScript principal -->
+  <script src="js/script.js"></script>
+</body>
+</html>

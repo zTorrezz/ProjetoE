@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos - Gestão Escolar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets/img/logo.svg" alt="Logo Gestão Escolar">
+      <span>Gestão Escolar</span>
+    </div>
+    
+    <button class="menu-btn" id="menuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <div class="user-info">
+      <span>Bem-vindo, Admin</span>
+      <a href="index.html" class="logout-btn">Sair</a>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <nav class="nav-menu">
+        <ul>
+          <li class="nav-item">
+            <a href="home.html" class="nav-link">
+              <i class="icon-home"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="alunos.html" class="nav-link active">
+              <i class="icon-student"></i> Alunos
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="professores.html" class="nav-link">
+              <i class="icon-teacher"></i> Professores
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="turmas.html" class="nav-link">
+              <i class="icon-class"></i> Turmas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="disciplinas.html" class="nav-link">
+              <i class="icon-subject"></i> Disciplinas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="notas.html" class="nav-link">
+              <i class="icon-grade"></i> Notas
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="content">
+      <div class="breadcrumb">Home / Alunos</div>
+      <h1><i class="icon-student"></i> Gestão de Alunos</h1>
+      
+      <div class="actions">
+        <button id="addAluno" class="btn-primary">
+          <i class="icon-add"></i> Adicionar Aluno
+        </button>
+        <div class="search-box">
+          <input type="text" id="searchAluno" placeholder="Buscar aluno...">
+          <button class="search-btn">
+            <i class="icon-search"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="table-responsive">
+        <table id="alunosTable">
+          <thead>
+            <tr>
+              <th>Matrícula</th>
+              <th>Nome</th>
+              <th>Data Nasc.</th>
+              <th>Turma</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>20230001</td>
+              <td>João da Silva</td>
+              <td>15/03/2005</td>
+              <td>Turma A - 1º Ano</td>
+              <td><span class="status active">Ativo</span></td>
+              <td class="actions-cell">
+                <button class="btn-edit"><i class="icon-edit"></i> Editar</button>
+                <button class="btn-delete"><i class="icon-delete"></i> Remover</button>
+              </td>
+            </tr>
+            <tr>
+              <td>20230002</td>
+              <td>Maria Oliveira</td>
+              <td>22/07/2004</td>
+              <td>Turma B - 2º Ano</td>
+              <td><span class="status active">Ativo</span></td>
+              <td class="actions-cell">
+                <button class="btn-edit"><i class="icon-edit"></i> Editar</button>
+                <button class="btn-delete"><i class="icon-delete"></i> Remover</button>
+              </td>
+            </tr>
+            <tr>
+              <td>20230003</td>
+              <td>Pedro Santos</td>
+              <td>10/11/2006</td>
+              <td>Turma C - 3º Ano</td>
+              <td><span class="status inactive">Inativo</span></td>
+              <td class="actions-cell">
+                <button class="btn-edit"><i class="icon-edit"></i> Editar</button>
+                <button class="btn-delete"><i class="icon-delete"></i> Remover</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Modal para cadastro completo -->
+      <div id="alunoModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2 id="modalTitle">Cadastro Completo do Aluno</h2>
+          <form id="alunoForm">
+            <div class="form-tabs">
+              <button type="button" class="tab-btn active" data-tab="dados-pessoais">Dados Pessoais</button>
+              <button type="button" class="tab-btn" data-tab="dados-escolares">Dados Escolares</button>
+              <button type="button" class="tab-btn" data-tab="responsaveis">Responsáveis</button>
+            </div>
+            
+            <div class="tab-content active" id="dados-pessoais">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nomeAluno">Nome Completo*</label>
+                  <input type="text" id="nomeAluno" required>
+                </div>
+                <div class="form-group">
+                  <label for="dataNascimento">Data de Nascimento*</label>
+                  <input type="date" id="dataNascimento" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cpfAluno">CPF*</label>
+                  <input type="text" id="cpfAluno" required>
+                </div>
+                <div class="form-group">
+                  <label for="rgAluno">RG</label>
+                  <input type="text" id="rgAluno">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="enderecoAluno">Endereço Completo</label>
+                <input type="text" id="enderecoAluno">
+              </div>
+            </div>
+            
+            <div class="tab-content" id="dados-escolares">
+              <div class="form-group">
+                <label for="turmaAluno">Turma*</label>
+                <select id="turmaAluno" required>
+                  <option value="">Selecione uma turma</option>
+                  <option value="1">Turma A - 1º Ano</option>
+                  <option value="2">Turma B - 2º Ano</option>
+                  <option value="3">Turma C - 3º Ano</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="anoLetivo">Ano Letivo*</label>
+                <input type="text" id="anoLetivo" value="2023" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="statusAluno">Status*</label>
+                <select id="statusAluno" required>
+                  <option value="ativo">Ativo</option>
+                  <option value="inativo">Inativo</option>
+                  <option value="transferido">Transferido</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="tab-content" id="responsaveis">
+              <div class="form-group">
+                <label for="nomeResponsavel">Nome do Responsável*</label>
+                <input type="text" id="nomeResponsavel" required>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cpfResponsavel">CPF do Responsável</label>
+                  <input type="text" id="cpfResponsavel">
+                </div>
+                <div class="form-group">
+                  <label for="parentesco">Parentesco*</label>
+                  <select id="parentesco" required>
+                    <option value="pai">Pai</option>
+                    <option value="mae">Mãe</option>
+                    <option value="outro">Outro</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="contatoResponsavel">Telefone para Contato*</label>
+                <input type="tel" id="contatoResponsavel" required>
+              </div>
+            </div>
+            
+            <div class="form-actions">
+              <button type="button" class="btn-secondary" id="prevTab">Anterior</button>
+              <button type="button" class="btn-secondary" id="nextTab">Próximo</button>
+              <button type="submit" class="btn-primary">Finalizar Cadastro</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script src="js/alunos.js"></script>
+</body>
+</html>

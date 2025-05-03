@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professores - Gestão Escolar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets/images/logo.svg" alt="Logo Gestão Escolar">
+      <span>Gestão Escolar</span>
+    </div>
+    
+    <button class="menu-btn" id="menuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <div class="user-info">
+      <span>Bem-vindo, Admin</span>
+      <a href="index.html" class="logout-btn">Sair</a>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <nav class="nav-menu">
+        <ul>
+          <li class="nav-item">
+            <a href="home.html" class="nav-link">
+              <i class="icon-home"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="alunos.html" class="nav-link">
+              <i class="icon-student"></i> Alunos
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="professores.html" class="nav-link active">
+              <i class="icon-teacher"></i> Professores
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="turmas.html" class="nav-link">
+              <i class="icon-class"></i> Turmas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="disciplinas.html" class="nav-link">
+              <i class="icon-subject"></i> Disciplinas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="notas.html" class="nav-link">
+              <i class="icon-grade"></i> Notas
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="content">
+      <div class="breadcrumb">Home / Professores</div>
+      <h1><i class="icon-teacher"></i> Gestão de Professores</h1>
+      
+      <div class="actions">
+        <button id="addProfessor" class="btn-primary">
+          <i class="icon-add"></i> Adicionar Professor
+        </button>
+        <div class="search-box">
+          <input type="text" id="searchProfessor" placeholder="Buscar professor...">
+          <button class="search-btn">
+            <i class="icon-search"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="table-responsive">
+        <table id="professoresTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Formação</th>
+              <th>Disciplinas</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1001</td>
+              <td>Carlos Mendes</td>
+              <td>Matemática</td>
+              <td>Matemática, Física</td>
+              <td><span class="status active">Ativo</span></td>
+              <td class="actions-cell">
+                <button class="btn-edit"><i class="icon-edit"></i> Editar</button>
+                <button class="btn-delete"><i class="icon-delete"></i> Remover</button>
+              </td>
+            </tr>
+            <tr>
+              <td>1002</td>
+              <td>Ana Paula Silva</td>
+              <td>Letras</td>
+              <td>Português, Literatura</td>
+              <td><span class="status active">Ativo</span></td>
+              <td class="actions-cell">
+                <button class="btn-edit"><i class="icon-edit"></i> Editar</button>
+                <button class="btn-delete"><i class="icon-delete"></i> Remover</button>
+              </td>
+            </tr>
+            <tr>
+              <td>1003</td>
+              <td>Roberto Almeida</td>
+              <td>História</td>
+              <td>História, Sociologia</td>
+              <td><span class="status inactive">Afastado</span></td>
+              <td class="actions-cell">
+                <button class="btn-edit"><i class="icon-edit"></i> Editar</button>
+                <button class="btn-delete"><i class="icon-delete"></i> Remover</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Modal para cadastro completo -->
+      <div id="professorModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2 id="modalTitle">Cadastro Completo do Professor</h2>
+          <form id="professorForm">
+            <div class="form-tabs">
+              <button type="button" class="tab-btn active" data-tab="dados-pessoais">Dados Pessoais</button>
+              <button type="button" class="tab-btn" data-tab="dados-profissionais">Dados Profissionais</button>
+              <button type="button" class="tab-btn" data-tab="disciplinas">Disciplinas</button>
+            </div>
+            
+            <div class="tab-content active" id="dados-pessoais">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nomeProfessor">Nome Completo*</label>
+                  <input type="text" id="nomeProfessor" required>
+                </div>
+                <div class="form-group">
+                  <label for="dataNascimento">Data de Nascimento</label>
+                  <input type="date" id="dataNascimento">
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cpfProfessor">CPF*</label>
+                  <input type="text" id="cpfProfessor" required>
+                </div>
+                <div class="form-group">
+                  <label for="rgProfessor">RG</label>
+                  <input type="text" id="rgProfessor">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="enderecoProfessor">Endereço Completo</label>
+                <input type="text" id="enderecoProfessor">
+              </div>
+            </div>
+            
+            <div class="tab-content" id="dados-profissionais">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="formacaoProfessor">Formação*</label>
+                  <input type="text" id="formacaoProfessor" required>
+                </div>
+                <div class="form-group">
+                  <label for="titulacao">Titulação</label>
+                  <select id="titulacao">
+                    <option value="graduacao">Graduação</option>
+                    <option value="especializacao">Especialização</option>
+                    <option value="mestrado">Mestrado</option>
+                    <option value="doutorado">Doutorado</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="dataAdmissao">Data de Admissão*</label>
+                <input type="date" id="dataAdmissao" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="statusProfessor">Status*</label>
+                <select id="statusProfessor" required>
+                  <option value="ativo">Ativo</option>
+                  <option value="inativo">Inativo</option>
+                  <option value="afastado">Afastado</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="tab-content" id="disciplinas">
+              <div class="form-group">
+                <label>Disciplinas Ministradas*</label>
+                <div class="checkbox-group">
+                  <label><input type="checkbox" name="disciplinas" value="matematica"> Matemática</label>
+                  <label><input type="checkbox" name="disciplinas" value="portugues"> Português</label>
+                  <label><input type="checkbox" name="disciplinas" value="historia"> História</label>
+                  <label><input type="checkbox" name="disciplinas" value="geografia"> Geografia</label>
+                  <label><input type="checkbox" name="disciplinas" value="ciencias"> Ciências</label>
+                  <label><input type="checkbox" name="disciplinas" value="ingles"> Inglês</label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="observacoes">Observações</label>
+                <textarea id="observacoes" rows="3"></textarea>
+              </div>
+            </div>
+            
+            <div class="form-actions">
+              <button type="button" class="btn-secondary" id="prevTab">Anterior</button>
+              <button type="button" class="btn-secondary" id="nextTab">Próximo</button>
+              <button type="submit" class="btn-primary">Finalizar Cadastro</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script src="js/professores.js"></script>
+</body>
+</html>

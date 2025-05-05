@@ -6,53 +6,65 @@
     <title>Notas | Gestão Escolar</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/auth.css">
-    <link rel="icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <button class="menu-btn" id="menuBtn">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <div class="main-container">
+    <header>
+        <div class="logo">
+          <img src="images/favicon.ico" alt="Logo Gestão Escolar">
+          <p>Gestão de Notas</p>
+        </div>
+        
+        <button class="menu-btn" id="menuBtn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        
+        <div class="user-info">
+          <span>Bem-vindo, Admin</span>
+          <a href="index.html" class="logout-btn">Sair</a>
+        </div>
+      </header>
+    
+      <div class="main-container">
+        <!-- Sidebar -->
         <aside class="sidebar" id="sidebar">
-            <nav class="nav-menu">
-                <ul>
-                    <li class="nav-item">
-                        <a href="home.html" class="nav-link">
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="alunos.html" class="nav-link">
-                            <span>Alunos</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="professores.html" class="nav-link">
-                            <span>Professores</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="turmas.html" class="nav-link">
-                            <span>Turmas</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="disciplinas.html" class="nav-link">
-                            <span>Disciplinas</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="notas.html" class="nav-link active">
-                            <span>Notas</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+          <nav class="nav-menu">
+            <ul>
+              <li class="nav-item">
+                <a href="home.html" class="nav-link">
+                  <i class="icon-home"></i> Dashboard
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="alunos.html" class="nav-link">
+                  <i class="icon-student"></i> Alunos
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="professores.html" class="nav-link">
+                  <i class="icon-teacher"></i> Professores
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="turmas.html" class="nav-link">
+                  <i class="icon-class"></i> Turmas
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="disciplinas.html" class="nav-link">
+                  <i class="icon-subject"></i> Disciplinas
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="notas.html" class="nav-link active">
+                  <i class="icon-grade"></i> Notas
+                </a>
+              </li>
+            </ul>
+          </nav>
         </aside>
-
         <main class="content">
             <h1>Gestão de Notas</h1>
             

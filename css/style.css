@@ -35,8 +35,7 @@ body {
   font-family: 'Poppins', sans-serif;  /* Fonte principal */
   background-color: var(--light);      /* Cor de fundo */
   color: var(--dark);                  /* Cor do texto */
-  line-height: 1.6;
-  font-family: 'Sansation', sans-serif;                  /* Espaçamento entre linhas */
+  line-height: 1.6;               /* Espaçamento entre linhas */
 }
 
 /* Layout principal - container flexível */
@@ -75,6 +74,11 @@ header .logo {
 /* Imagem do logo */
 header .logo img {
   height: 25px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  
 }
 
 /* Área de informações do usuário (oculta por padrão) */
@@ -152,6 +156,15 @@ header .logo img {
 .nav-item {
   list-style: none;
 }
+
+.noselect {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+
 
 /* Links do menu */
 .nav-link {

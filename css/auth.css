@@ -179,8 +179,8 @@
 
 /* Efeito hover do botão */
 .login-btn:hover {
-    transform: translateY(-2px); /* Levanta levemente */
-    box-shadow: 0 4px 12px rgba(255, 90, 31, 0.3); /* Sombra laranja */
+    transform: translateY(-1px); /* Levanta levemente */
+    box-shadow: 0 4px 12px rgba(245, 87, 30, 0.3); /* Sombra laranja */
 }
 
 /* ============================================= */

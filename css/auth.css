@@ -6,8 +6,8 @@
 /* Define as cores padrão usadas em todo o site  */
 /* ============================================= */
 :root {
-    --primary: #f35c11;       /* Cor primária (laranja) */
-    --primary-dark: #d03801;  /* Versão mais escura da cor primária */
+    --primary: #118df3;       /* Cor primária (laranja) */
+    --primary-dark: #0b66b1;  /* Versão mais escura da cor primária */
     --white: #ffffff;         /* Branco puro */
     --light: #f9f9f9;         /* Cinza muito claro para fundos */
     --dark: #333333;          /* Preto/cinza escuro para textos */
@@ -100,7 +100,7 @@
 .login-logo {
     height: 60px;           /* Altura fixa */
     margin-bottom: 1rem;    /* Espaço abaixo do logo */
-    filter: brightness(0) invert(1); /* Transforma logo em branco */
+     /* Transforma logo em branco */
 }
 
 /* Título principal */
@@ -113,7 +113,7 @@
 
 /* Subtítulo */
 .login-subtitle {
-    color: rgba(255, 255, 255, 0.8); /* Branco com 80% de opacidade */
+    color: rgb(255, 255, 255); /* Branco com 80% de opacidade */
     font-size: 1rem;        /* Tamanho normal */
 }
 

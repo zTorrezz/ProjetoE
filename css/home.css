@@ -1,10 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
-
-
 /* Variáveis globais para cores e temas */
 :root {
-  --primary: #118df3;         /* Cor primária (laranja) */
-  --primary-dark: #0b66b1;    /* Cor primária escura */
+  --primary: #ff5a1f;         /* Cor primária (laranja) */
+  --primary-dark: #d03801;    /* Cor primária escura */
   --secondary: #00a3e0;       /* Cor secundária (azul) */
   --danger: #e53e3e;          /* Cor para erros/perigo */
   --warning: #f6ad55;         /* Cor para avisos */
@@ -17,28 +14,20 @@
   --white: #ffffff;          /* Branco */
 }
 
-
-
 /* Reset básico para todos os elementos */
 * {
   box-sizing: border-box;    /* Modelo de caixa mais intuitivo */
   margin: 0;                /* Remove margens padrão */
   padding: 0;               /* Remove paddings padrão */
-  border: none;
-  font-family: 'Poppins', sans-serif;
-  
-  
 }
-
 
 /* Estilos gerais do corpo da página */
 body {
   font-family: 'Poppins', sans-serif;  /* Fonte principal */
   background-color: var(--light);      /* Cor de fundo */
   color: var(--dark);                  /* Cor do texto */
-  line-height: 1.6;               /* Espaçamento entre linhas */
+  line-height: 1.6;                    /* Espaçamento entre linhas */
 }
-
 
 /* Layout principal - container flexível */
 .main-container {
@@ -57,7 +46,6 @@ header {
   width: 100%;
   z-index: 998;             /* Camada de posicionamento */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  text-align: left;
 }
 
 /* Estilos para o logo no cabeçalho */
@@ -68,19 +56,11 @@ header .logo {
   color: var(--white);
   font-size: 1.2rem;
   font-weight: 600;
-  justify-content: flex-start;
-  text-align: left;
-  
 }
 
 /* Imagem do logo */
 header .logo img {
   height: 25px;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  
 }
 
 /* Área de informações do usuário (oculta por padrão) */
@@ -99,7 +79,7 @@ header .logo img {
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 1000;            /* Acima de outros elementos */
+  z-index: 1001;            /* Acima de outros elementos */
   position: fixed;
   top: 20px;
   right: 20px;
@@ -139,8 +119,7 @@ header .logo img {
   background-color: var(--dark-bg);
   color: var(--white);
   padding: 1.5rem 0;
-  transition: all 0.3s;  
-    position: fixed;    /* Animação suave */
+  transition: all 0.3s;     /* Animação suave */
 }
 
 /* Cabeçalho da sidebar (oculto por padrão) */
@@ -159,15 +138,6 @@ header .logo img {
 .nav-item {
   list-style: none;
 }
-
-.noselect {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
-
-
 
 /* Links do menu */
 .nav-link {
@@ -209,21 +179,17 @@ header .logo img {
   margin-bottom: 1.5rem;
 }
 
-.school-description {
-text-align: center;
-}
-
 /* Estilos para títulos */
 h1, h2, h3 {
   color: var(--dark);
   margin-bottom: 1rem;
-  margin-top: 10px;
 }
 
 h1 {
-  font-size: 1.75rem;  
+  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
   gap: 10px;
-  
 }
 
 /* Grid de estatísticas */
@@ -292,17 +258,16 @@ h1 {
 
 /* Imagem da escola */
 .school-image {
-  width: 100%;
-  height: 100%;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   border-radius: 8px;
-;
 }
 
 /* Detalhes da escola */
 .school-details h2 {
   margin-bottom: 0.5rem;
-  color: var(--dark);
+  color: var(--primary);
 }
 
 /* Descrição da escola */
@@ -337,7 +302,7 @@ h1 {
 /* Imagens da galeria */
 .gallery-item img {
   width: 100%;
-  height: 200px;
+  height: 160px;
   object-fit: cover;
 }
 
@@ -402,35 +367,22 @@ h1 {
 }
 
 /* Botão primário (laranja) */
-
-
-
-
 .btn-primary {
   background-color: var(--primary);
   color: white;
-  border: none;
-  border-radius: 10px;
-  width: 105px;
-  height: 50px;
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
 }
 
 /* Efeito hover no botão primário */
 .btn-primary:hover {
   background-color: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(31, 38, 134, 0.514);
+  box-shadow: 0 4px 8px rgba(255, 90, 31, 0.3);
 }
 
 /* Botão secundário */
 .btn-secondary {
   background-color: var(--gray-light);
   color: var(--dark);
-  width: 80px;
-  font-family: 'Poppins', sans-serif;
-  border-radius: 10px;
 }
 
 .btn-secondary:hover {
@@ -442,14 +394,6 @@ h1 {
   background-color: var(--secondary);
   color: white;
   padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 10px;
-  width: 25%;
-  position: relative;
-  font-size: medium;
-  min-width: 100px;
-  margin:  0 auto;
-  margin-bottom: 7px;
 }
 
 .btn-edit:hover {
@@ -461,15 +405,6 @@ h1 {
   background-color: var(--danger);
   color: white;
   padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 10px;
-  width: 25%;
-  position: relative;
-  font-size: medium;
-  min-width: 100px;
- text-align: center;
- margin:  0 auto;
-
 }
 
 .btn-delete:hover {
@@ -494,7 +429,7 @@ table {
 /* Células da tabela */
 th, td {
   padding: 1rem;
-  text-align: center;
+  text-align: left;
   border-bottom: 1px solid var(--gray-light);
 }
 
@@ -505,7 +440,6 @@ th {
   font-weight: 600;
   position: sticky;
   top: 0;
-  
 }
 
 /* Efeito hover nas linhas */
@@ -536,9 +470,8 @@ tr:hover {
 
 /* Célula de ações na tabela */
 .actions-cell {
-  display: block;
+  display: flex;
   gap: 0.5rem;
-
 }
 
 /* Grupos de formulário */
@@ -565,10 +498,7 @@ tr:hover {
   font-size: 1rem;
   transition: all 0.2s;
   background-color: var(--white);
- 
 }
-
-
 
 /* Efeito ao focar nos campos */
 .form-group input:focus,
@@ -704,59 +634,47 @@ tr:hover {
 /* ========== MEDIA QUERIES ========== */
 
 /* Telas médias (tablets) */
-@media (min-width: 300px) {
+@media (max-width: 992px) {
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  } 
-
-.container, .card, .content {
-        width: 90% !important;
-    }
-
-
-
-}
-
+  }
   
   .menu-btn {
     display: flex;
-    position: absolute;  /* Torna o botão posicionado de forma absoluta */
-    top: 20px;  /* Distância do topo, você pode ajustar conforme necessário */
-    left: 20px;  /* Distância da esquerda */
-    z-index: 1100; /* Garante que o botão fique sobre outros elementos */
-}
-
-.sidebar {
+  }
+  
+  .sidebar {
     position: fixed;
     top: 0;
     left: -280px;
     height: 100vh;
-    z-index: 800;
+    z-index: 1000;
     padding-top: 70px;
-}
-
-.sidebar.open {
+  }
+  
+  .sidebar.open {
     left: 0;
-}
-
-.content {
+  }
+  
+  .content {
     padding-top: 70px;
     padding-left: 1rem;
     padding-right: 1rem;
-}
-
-.school-header {
+  }
+  
+  .school-header {
     flex-direction: column;
     text-align: center;
-    background-color: rgba(255, 12, 12, 0);
-
+  }
+  
+  .school-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+  }
 }
-
-
- 
-
 
 /* Telas pequenas (tablets pequenos/mobile grande) */
 @media (max-width: 768px) {
@@ -788,16 +706,6 @@ tr:hover {
 
 /* Telas muito pequenas (celulares) */
 @media (max-width: 576px) {
-
-
-.container, .card, .content {
-        width: 90% !important;
-        padding: 10px !important;
-        box-sizing: border-box;
-              
-      }
-        
-
   .modal-content {
     padding: 1.5rem;
   }
@@ -816,17 +724,99 @@ tr:hover {
     bottom: auto;
     left: auto;
     right: -1px;
-  }  
+  }
+}
+/* Responsividade para telas pequenas (celulares) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        font-size: 14px;
+    }
+    .container, .card, .content {
+        width: 100% !important;
+        padding: 10px !important;
+        box-sizing: border-box;
+    }
+    nav, header, footer {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
-.school-image {
-  width: 20%;
-  height: 40%;
+/* Responsividade para telas médias (tablets) */
+@media (min-width: 601px) and (max-width: 992px) {
+    .container, .card, .content {
+        width: 90% !important;
+    }
 }
 
-.container {
+/* Variáveis globais de cor */
+:root {
+    --primary-color: #2a9d8f;
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --accent-color: #e76f51;
+}
+
+/* Centralização do layout em telas largas */
+.container, .content, .card {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo base refinado */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+}
+
+/* Botões e links com interações */
+button, input[type="submit"], a.button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover, a.button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Ajuste geral em campos de formulário */
+input, select, textarea {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+
+/* Estilo moderno para tabelas */
+table {
   width: 100%;
-  padding: 20px;
-  box-sizing: border-box;
+  background-color: var(--white);
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
+table th, table td {
+  padding: 12px 15px;
+  border: 1px solid var(--gray-light);
+  text-align: left;
+}
+
+table th {
+  background-color: var(--gray-light);
+  font-weight: 600;
+}
+
+.dataTables_wrapper {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 12px;
+}
